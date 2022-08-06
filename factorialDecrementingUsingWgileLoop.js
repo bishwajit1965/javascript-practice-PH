@@ -11,6 +11,6 @@ function factorialOfNumber(num) {
 }
 /* Only change value to get the factorial value of a number
 ===========================================================*/
-const num = 8;
+const num = 7;
 const result = factorialOfNumber(num);
 console.log("Factorial of ", num, " is ", result);
