@@ -31,3 +31,10 @@ const data = ["Bangladesh", "India", "China", "Bhutan"];
 
 const slicer = sliceArray(data);
 // console.log(slicer);
+
+// Use of slice() and splice()
+const array = ["Apple", "Orange", "Banana", "Pineapple"];
+const sliced = array.slice(3);
+console.log(sliced);
+
+console.log(array);

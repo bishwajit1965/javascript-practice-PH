@@ -4,6 +4,8 @@ const shoppingCart = [
   { name: "shoe", price: 2500, quantity: 3 },
   { name: "belt", price: 600, quantity: 3 },
   { name: "tie", price: 500, quantity: 3 },
+  { name: "bodySpray", price: 500, quantity: 2 },
+  { name: "bedCover", price: 1200, quantity: 2 },
 ];
 
 function totalCost(products) {
@@ -12,9 +14,13 @@ function totalCost(products) {
     const product = products[i];
     const productCost = product.price * product.quantity;
     sum = sum + productCost;
-    // console.log(sum);
+    if (sum >= 20000) {
+      const reduction = 0.02;
+      const waiver = sum * reduction;
+      sum = sum - waiver;
+    }
   }
   return parseFloat(sum).toFixed(2);
 }
 const cost = totalCost(shoppingCart);
-console.log("Total cost of purchase:", cost, "Tk");
+console.log("Total cost of purchase: ", cost, "Tk");
