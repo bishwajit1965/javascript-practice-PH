@@ -1,6 +1,6 @@
 {
-  "cSpell.words": ["bangla"],
-  "editor.formatOnType": true,
+  "cSpell.words": ["bangla", "todos"],
+  "editor.formatOnType": false,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Dom Summary</title>
+    <!-- Custom css linked -->
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h1>Final dom handlers</h1>
+      <hr />
+
+      <div class="left">
+        <h3 id="demo">Hide this text on click function triggered.</h3>
+        <button type="button" onclick="changeText()">Hide text</button>
+        <button type="button" onclick="makeYellow()">Make body yellow</button>
+        <button type="button" onclick="addText()">Add para</button>
+        <br />
+        <br />
+        <input type="text" name="" id="input-data" />
+        <input type="submit" name="" id="submit-data" onclick="changeText()" />
+      </div>
+
+      <div class="right" id="right-section">
+        <h3>All comments are displayed</h3>
+        <p>Hello viewers, how are you? This is a comment added just niow.</p>
+        <p>Hello viewers, how are you? This is a comment added just niow.</p>
+        <p>Hello viewers, how are you? This is a comment added just niow.</p>
+        <textarea name="" id="data-input" cols="60" rows="6"></textarea><br />
+        <button type="submit" id="add-comment">Add comment</button>
+      </div>
+    </div>
+  </body>
+  <!-- Js file linked -->
+  <script>
+    const sectionRight = document.getElementById("right-section");
+    document
+      .getElementById("add-comment")
+      .addEventListener("click", function () {
+        const inputData = document.getElementById("data-input").value;
+        const para = document.createElement("p");
+        para.innerText = inputData;
+        console.log("inputData");
+        sectionRight.appendChild(para);
+      });
+  </script>
+  <script src="scripts/jsDomSummary.js"></script>
+</html>

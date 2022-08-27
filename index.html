@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api</title>
+    <link rel="stylesheet" href="api/css/api.css" />
+    <style>
+      .post {
+        /* background-color: skyblue; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header begins -->
+    <header>
+      <h1>API Data Loading</h1>
+    </header>
+    <!-- header ends -->
+
+    <!-- Main begins -->
+    <div class="main">
+      <button type="submit" onclick="loadData()">Load data</button>
+      <button type="submit" onclick="loadUsers()">Load users</button>
+      <button type="submit" onclick="loadPosts()">Load posts</button>
+      <button type="submit" onclick="loadComments()">Load comments</button>
+      <button type="submit" onclick="loadTodo()">Load to dos</button>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, eligendi
+        officiis nostrum soluta fugit, vel suscipit iure nisi possimus sit
+        magnam quaerat commodi quidem odio, ab nesciunt eius nulla optio!
+      </p>
+      <div class="users">
+        <ol id="user-data"></ol>
+      </div>
+
+      <section class="posts-area">
+        <h1>Displaying all posts.</h1>
+        <div id="post-container"></div>
+      </section>
+
+      <section class="comments-area">
+        <h1>Displaying all comments.</h1>
+        <div id="comment-container"></div>
+      </section>
+
+      <section class="todos-area">
+        <h1>Displaying all to dos.</h1>
+        <div id="todos-container"></div>
+      </section>
+    </div>
+    <!-- Main ends -->
+
+    <!-- Footer begins -->
+    <footer>
+      <span>&copy; 2022 All rights reserved. </span>
+    </footer>
+    <!-- Footer ends -->
+
+    <!-- Js files linked -->
+    <script src="api/js/posts.js"></script>
+    <script src="api/js/index.js"></script>
+    <script src="api/js/comments.js"></script>
+    <script src="api/js/todo.js"></script>
+  </body>
+</html>

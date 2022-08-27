@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event bubble</title>
+  </head>
+  <body>
+    <h1>Event bubbling</h1>
+    <hr />
+    <section>
+      <ul>
+        <li id="item-1">This is list no 1</li>
+        <li id="item-2">This is list no 2</li>
+        <li id="item-3">This is list no 3</li>
+        <li id="item-4">This is list no 4</li>
+        <li id="item-5">This is list no 5</li>
+        <li id="item-6">This is list no 6</li>
+      </ul>
+    </section>
+  </body>
+  <script>
+    document.getElementById("item-1").addEventListener("click", function () {
+      console.log("clicked item one");
+    });
+  </script>
+</html>
