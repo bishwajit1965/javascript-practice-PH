@@ -18,8 +18,9 @@ const displayMeals = (meals) => {
       <h6 class="card-title">Name: ${meal.strMeal}</h6>
         <h6 class="card-title">Meal Id: ${meal.idMeal}</h6>
         <h6 class="card-title">Desc: ${meal.strArea} ${meal.strCategory}</h6>
+
         <p class="card-text">
-        Category: ${meal.strInstructions.slice(0, 100)}
+        Instruction: ${meal.strInstructions.slice(0, 100)}
         </p>
       </div>
     </div>
@@ -53,8 +54,11 @@ const displayMealDetails = (meal) => {
       <h6 class="card-title">Name: ${meal.strMeal}</h6>
         <h6 class="card-title">Meal Id: ${meal.idMeal}</h6>
         <h6 class="card-title">Desc: ${meal.strArea} ${meal.strCategory}</h6>
+        <h6 class="card-title">Meal Category: ${meal.strCategory}</h6>
+        <h6 class="card-title">Meal Category: ${meal.strYoutube}</h6>
+        <h6 class="card-title">Source: ${meal.strArea} ${meal.strSource}</h6>
         <p class="card-text">
-        Category: ${meal.strInstructions.slice(0, 100)}
+        Instruction: ${meal.strInstructions.slice(0, 100)}
         </p>
       </div>
   `;
