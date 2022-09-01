@@ -35,7 +35,7 @@ const searchCocktail = () => {
   const searchField = document.getElementById("search-field");
   const searchWord = searchField.value;
   loadCocktailItems(searchWord);
-  searchWord = "";
+  searchField.value = "";
 };
 
 // Enabling search on pressing enter key
@@ -46,6 +46,16 @@ document
       searchCocktail();
     }
   });
+
+// display empty field message
+const displayMessage = () => {
+  const data = document.getElementById("search-field");
+  if (data.value === "") {
+    alert("Search field is empty !!!");
+  } else {
+    searchCocktail();
+  }
+};
 /* Search option ends
 =====================*/
 
