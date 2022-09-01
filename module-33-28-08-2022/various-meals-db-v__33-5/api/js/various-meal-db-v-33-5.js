@@ -63,7 +63,6 @@ const displayMealDetails = (meal) => {
       </div>
   `;
   const mealCard = document.createElement("div");
-
   mealDetails.appendChild(mealCard);
 };
 loadMeals("a");

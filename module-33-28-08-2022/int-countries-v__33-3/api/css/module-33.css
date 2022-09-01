@@ -1,0 +1,26 @@
+.countries {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+header h1 {
+  text-align: center;
+}
+.countries {
+  background-color: #fff;
+}
+button {
+  background-color: green;
+  padding: 5px;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+.flag-style {
+  border: 3px solid #023a07;
+  padding: 10px;
+  border-radius: 10px;
+}

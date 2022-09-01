@@ -12,14 +12,14 @@ const displayPhotos = (photos) => {
     const photoDiv = document.createElement("div");
     photoDiv.classList.add("col");
     photoDiv.innerHTML = `
-    <div class="card h-100">
+    <div class="card">
     <img src="${photo.thumbnailUrl}" class="card-img-top" alt="Photo">
     <div class="card-body">
       <h5 class="card-title">Title: ${photo.title.slice(0, 50)}</h5>
       <p class="card-text">URL: <a href="${photo.url}">visit</a> </p>
       <button type="button" onclick="loadPhotoDetail(${
         photo.id
-      })" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      })" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Show details of photo:  ${photo.id}
     </div>
     `;
