@@ -38,7 +38,6 @@ const displayPhotoDetails = (photo) => {
   console.log(photo);
   const modalTitle = document.getElementById("exampleModalLabel");
   modalTitle.innerText = "Photo title: " + photo.title;
-
   const modalBody = document.getElementById("modal-body");
   modalBody.innerHTML = `
   <img src="${
