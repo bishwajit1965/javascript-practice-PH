@@ -69,4 +69,18 @@ const numOperation = (paramOne, paramTwo) => {
 const mapNumbers = [7, 14, 21, 28, 35, 42, 49, 56];
 const numPushed = [];
 const result = mapNumbers.map((num) => numPushed.push(num / 7));
-console.log(numPushed);
+// console.log(numPushed);
+
+// 6 Problem solving
+const districts = {
+  name: "Jashore",
+  upozilas: 9,
+  schools: 140,
+  colleges: 122,
+  area: 55,
+};
+const numArray = [50, 51, 45, 78, 66, 35, 87, 99];
+const [a, b, balance, ...rest] = numArray;
+const { upozilas } = districts;
+console.log("Number of upozilas: ", upozilas);
+console.log("Value of variable balance is : ", balance);

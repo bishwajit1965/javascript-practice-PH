@@ -1,12 +1,13 @@
-const loadCocktailItems = async () => {
-  const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a`;
+const loadCocktailItems = async (search) => {
+  const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${search}`;
   const response = await fetch(url);
   const data = await response.json();
-  // console.log(data);
   displayCocktailItems(data.drinks);
 };
+
 const displayCocktailItems = (cocktails) => {
   const cocktailItems = document.getElementById("cocktail-items");
+  cocktailItems.innerHTML = "";
   cocktails.forEach((cocktail) => {
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("col");
@@ -15,11 +16,11 @@ const displayCocktailItems = (cocktails) => {
       <img src="${cocktail.strDrinkThumb}" class="card-img-top" alt="Cocktail image">
       <div class="card-body">
         <h5 class="card-title">Title: ${cocktail.strAlcoholic}</h5>
-        <p class="card-text">Instructions: ${cocktail.strInstructionsDE} </p>
+        <p class="card-text">Instructions: ${cocktail.strInstructionsDE}</p>
         <p class="card-text">Drink Id: ${cocktail.idDrink} </p>
 
         <button type="button" onclick="loadCocktail(${cocktail.idDrink})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch demo modal
+         <i class="fas fa-book-open"></i> Show details
         </button>
       </div>
     </div>
@@ -27,6 +28,26 @@ const displayCocktailItems = (cocktails) => {
     cocktailItems.appendChild(itemDiv);
   });
 };
+
+/* Search option begins
+=======================*/
+const searchCocktail = () => {
+  const searchField = document.getElementById("search-field");
+  const searchWord = searchField.value;
+  loadCocktailItems(searchWord);
+  searchWord = "";
+};
+
+// Enabling search on pressing enter key
+document
+  .getElementById("search-field")
+  .addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      searchCocktail();
+    }
+  });
+/* Search option ends
+=====================*/
 
 const loadCocktail = async (idDrink) => {
   const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`;
@@ -65,4 +86,5 @@ const displayCocktailItemDetails = (item) => {
   `;
 };
 
-loadCocktailItems();
+// Loading all available by default
+loadCocktailItems("a");

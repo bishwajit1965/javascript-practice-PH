@@ -1,0 +1,9 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h6 {
+  font-family: Impact, sans-serif;
+  color: tomato;
+}
