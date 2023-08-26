@@ -21,7 +21,7 @@
     <main class="container">
       <!-- Search phone section begins -->
       <section
-        class="col-sm-4 offset-sm-4 mt-4 mb-4 d-grid gap-2 col-sm-4 mx-auto"
+        class="col-sm-4 offset-sm-4 d-flex d-inline mt-4 mb-4 d-grid gap-2 col-sm-4 mx-auto"
       >
         <input
           id="search-input-field"
@@ -29,11 +29,7 @@
           class="form-control form-control-sm d-flex justify-content-center"
           placeholder="Search phones..."
         />
-        <button
-          type="submit"
-          id="btn-searcher"
-          class="btn btn-sm btn-primary mt-2"
-        >
+        <button type="submit" id="btn-searcher" class="btn btn-sm btn-primary">
           Search
         </button>
       </section>
@@ -46,12 +42,14 @@
           id="phones-container"
           class="row row-cols-1 row-cols-md-3 g-4"
         ></div>
+
         <!-- No phone found message -->
         <div id="message-no-phone-found">
           <h4 class="text-warning text-center mt-4">
             No phone is available. Try another one.
           </h4>
         </div>
+
         <!-- Show all phones -->
         <div
           id="show-all-phones"

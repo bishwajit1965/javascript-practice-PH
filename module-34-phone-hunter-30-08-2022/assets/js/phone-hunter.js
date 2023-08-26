@@ -4,6 +4,7 @@ const loadPhones = async (searchByText, dataRange) => {
   const data = await res.json();
   displayPhones(data.data, dataRange);
 };
+
 const displayPhones = (phones, dataRange) => {
   const phonesContainer = document.getElementById("phones-container");
   phonesContainer.textContent = "";
@@ -17,6 +18,7 @@ const displayPhones = (phones, dataRange) => {
   } else {
     showAll.classList.add("d-none");
   }
+
   /* Display no phone found message
   ================================= */
   const noPhoneFound = document.getElementById("message-no-phone-found");
@@ -34,9 +36,9 @@ const displayPhones = (phones, dataRange) => {
     <div class="card">
         <img src="${phone.image}" class="card-img-top" alt="Phone Image">
         <div class="card-body">
-            <h5 class="card-title">${phone.phone_name}</h5>
-            <p class="card-text">Click the button below to see the detailed features of the product. Wish you good luck.</p>
-            <button onclick="loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#loadPhoneDetails">Show Details</button>
+          <h5 class="card-title">${phone.phone_name}</h5>
+          <p class="card-text">Click the button below to see the detailed features of the product. Wish you good luck.</p>
+          <button onclick="loadPhoneDetails('${phone.slug}')" href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#loadPhoneDetails">Show Details</button>
         </div>
     </div>`;
     phonesContainer.appendChild(phoneDiv);
@@ -50,6 +52,7 @@ const searchProcess = (dataRange) => {
   const searchField = document.getElementById("search-input-field");
   const searchTerm = searchField.value;
   loadPhones(searchTerm, dataRange);
+  searchField.value = "";
 };
 
 /* Search handler click
@@ -73,8 +76,12 @@ document
 ================== */
 const spinnerToggler = (isLoadingSpinner) => {
   const loaderArea = document.getElementById("spinnerLoader");
+
   if (isLoadingSpinner) {
     loaderArea.classList.remove("d-none");
+    setTimeout(() => {
+      loaderArea.classList.add("d-none");
+    }, 1500);
   } else {
     loaderArea.classList.add("d-none");
   }
@@ -87,7 +94,7 @@ document
   });
 
 /* Loading phone details using id
-================================= */
+================================== */
 const loadPhoneDetails = async (id) => {
   const url = `https://openapi.programming-hero.com/api/phone/${id}`;
   const response = await fetch(url);
@@ -101,10 +108,12 @@ const displayPhoneDetails = (phone) => {
   console.log(phone);
   const modalTitle = document.getElementById("loadPhoneDetailsLabel");
   modalTitle.innerText = phone.name;
+
   const phoneDetail = document.getElementById("phone-details");
-  console.log(phone.mainFeatures.sensors[0]);
+  //   console.log(phone.mainFeatures.sensors[0]);
 
   phoneDetail.innerHTML = `
+    <h4>Detailed features.</h4>
     <p>Release data: ${
       phone.releaseData ? phone.releaseData : "No release data is available"
     }</p>
